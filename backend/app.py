@@ -9,13 +9,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# api_key = os.getenv("GROQ_API_KEY")
-# client = Groq(api_key=api_key)
 api_key = os.getenv("GROQ_API_KEY")
-
-if not api_key:
-    raise RuntimeError("GROQ_API_KEY not set")
-
 client = Groq(api_key=api_key)
 
 SYSTEM_PROMPT = """
@@ -93,3 +87,4 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
 
     app.run(host="0.0.0.0", port=port)
+
