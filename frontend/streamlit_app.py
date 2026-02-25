@@ -1,10 +1,10 @@
 import streamlit as st
 import requests
 
-BACKEND_URL ="http://127.0.0.1:5000/analyze"
+BACKEND_URL ="http://127.0.0.1:10000/analyze"
 
 st.set_page_config(page_title="AI Contract Review Bot")
-st.title("📄 AI Contract Review Bot")
+st.title(" AI Contract Review Bot ")
 
 uploaded_file = st.file_uploader("Upload Contract (PDF)", type=["pdf"])
 pasted_text = st.text_area("Or Paste Contract Text")
@@ -42,3 +42,4 @@ if st.button("Analyze"):
 
         st.header("📝 Summary")
         st.success(data["plain_english_summary"])
+
